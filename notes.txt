@@ -1,0 +1,9 @@
+2021-11-22
+
+DISCOS
+ - We needed to make constructors for Monster and Protag.
+ - The attributes of Character could not be private else, the subclasses did not have access to them.
+ - When you want to copy a file in terminal, use the command cp [path to og file] [path to cloned file]
+QCC
+ - Do we need to set specific values for the attributes for both Monster and Protag or should it be random?
+ - How should the stats of the protag compare to the monsters? Should they be balanced and how?
