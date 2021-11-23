@@ -163,7 +163,7 @@ public class YoRPG {
     //As usual, move the begin-comment bar down as you progressively 
     //test each new bit of functionality...
 
-    /*================================================
+    
     //loading...
     YoRPG game = new YoRPG();
     int encounters = 0;
@@ -174,7 +174,7 @@ public class YoRPG {
     System.out.println();
     }
     System.out.println( "Thy game doth be over." );
-	  ================================================*/
+
   }//end main
 
 }//end class YoRPG
