@@ -1,8 +1,3 @@
-public class Monster{
+public class Monster extends Character{
 
-	private int health;
-
-	public boolean isAlive(){
-                return (health > 0);
-        }
 }
