@@ -1,8 +1,8 @@
 public class Character{
-    int health;
-    int strength;
-    int defense;
-    double atkRate;
+   protected  int health;
+   protected  int strength;
+   protected  int defense;
+   protected  double atkRate;
     
     public boolean isAlive(){
 		return (health > 0);
@@ -16,7 +16,12 @@ public class Character{
 	    health -= dmgDealt;
 	}
 	
-	public void attack (Character c){
+	public int attack (Character c){
 	    int dmg = (int)((strength * atkRate) - c.defense);
+	    if (dmg < 0){
+	        dmg = 0;
+	    }
+	    c.lowerHP(dmg);
+	    return dmg;
 	}
 }
