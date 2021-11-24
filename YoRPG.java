@@ -2,14 +2,18 @@
  * class YoRPG -- Driver file for Ye Olde Role Playing Game.
  * Simulates monster encounters of a wandering adventurer.
  * Required classes: Protagonist, Monster
- * 
+ *
  * USAGE:
  * Compile. Note messages generated.
  * Devise a plan of attack with your trio.
  * Code incrementally, testing each bit of new functionality as you go.
  * The only modification you should make to this driver file is moving comment bar down in main method, and filling in DISCO/QCC
  * (If you feel other changes are merited, note what and why, so that we may discuss on the 'morrow.)
- * 
+ *
+ * DISCO:
+ *
+ * QCC:
+ *
  **********************************************/
 
 import java.io.*;
@@ -23,12 +27,13 @@ public class YoRPG {
   public final static int MAX_ENCOUNTERS = 5;
 
   //each round, a Protagonist and a Monster will be instantiated...
-  private Protagonist pat;   
-  private Monster smaug;     
+  private Protagonist pat;
+  private Monster smaug;
 
   private int moveCount;
   private boolean gameOver;
   private int difficulty;
+  private int protagClass;
 
   private InputStreamReader isr;
   private BufferedReader in;
@@ -46,15 +51,16 @@ public class YoRPG {
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-  
+
   // ~~~~~~~~~~~~~~ METHODS ~~~~~~~~~~~~~~~~~~~
 
   /*=============================================
     void newGame() -- gathers info to begin a new game
-    pre:  
-    post: according to user input, modifies instance var for difficulty 
+    pre:
+    post: according to user input, modifies instance var for difficulty
     and instantiates a Protagonist
     =============================================*/
+
   public void newGame() {
     String s;
     String name = "";
@@ -66,6 +72,7 @@ public class YoRPG {
     s += "\t3: Beowulf hath nothing on me. Bring it on.\n";
     s += "Selection: ";
     System.out.print( s );
+
 
     try {
 	    difficulty = Integer.parseInt( in.readLine() );
@@ -79,10 +86,36 @@ public class YoRPG {
 	    name = in.readLine();
     }
     catch ( IOException e ) { }
+/*
+    s = "Well, " + name + ", do tell, what art thou? \n";
+    s += "\t1: Paladin\n";
+    s += "\t2: Barbarian\n";
+    s += "\t3: Rogue\n";
+    s += "Choose wisely: ";
+    System.out.println( s );
+
+    try {
+	    protagClass = Integer.parseInt( in.readLine() );
+    }
+    catch ( IOException e ) {
+    }
+
 
     //instantiate the player's character
-    pat = new Protagonist( name );
+    if (protagClass == 1){
+        pat = new Paladin( name );
+    }
+    else if (protagClass == 2){
+        pat = new Barbarian( name );
+    }
+    else if (protagClass == 3){
+        pat = new Rogue( name );
+    }
+    else { // If the end user inputs any other number, it will get the default Protagonist
+        pat = new Protagonist( name );
+    }
 
+*/
   }//end newGame()
 
 
@@ -96,8 +129,19 @@ public class YoRPG {
     int i = 1;
     int d1, d2;
 
-    if ( Math.random() >= ( difficulty / 3.0 ) )
+    if ( Math.random() >= ( difficulty / 3.0 ) ) {
 	    System.out.println( "\nNothing to see here. Move along!" );
+    } else if (difficulty == 1) {
+      System.out.println( "\nLo, yonder goblin approacheth!" );
+      smaug = new Goblin();
+    } else if (difficulty == 2) {
+      System.out.println( "\nLo, yonder timber wolf approacheth!" );
+      smaug = new TimberWolf();
+    } else if (difficulty == 3) {
+      System.out.println( "\nLo, yonder dragon approacheth!" );
+      smaug = new Dragon();
+    }
+
     else {
 	    System.out.println( "\nLo, yonder monster approacheth!" );
 
@@ -132,7 +176,7 @@ public class YoRPG {
 
 	    //option 1: you & the monster perish
 	    if ( !smaug.isAlive() && !pat.isAlive() ) {
-        System.out.println( "'Twas an epic battle, to be sure... " + 
+        System.out.println( "'Twas an epic battle, to be sure... " +
                             "You cut ye olde monster down, but " +
                             "with its dying breath ye olde monster. " +
                             "laid a fatal blow upon thy skull." );
@@ -156,10 +200,10 @@ public class YoRPG {
 
 
   public static void main( String[] args ) {
-    //As usual, move the begin-comment bar down as you progressively 
+    //As usual, move the begin-comment bar down as you progressively
     //test each new bit of functionality...
 
-    
+
     //loading...
     YoRPG game = new YoRPG();
     int encounters = 0;
