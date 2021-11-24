@@ -8,3 +8,13 @@ ______________________________
 - Rin Fukuoka
 - Tape
 - Tasnim Chowdhury
+
+#### New Classes 
+-Protagonist 
+-Monster
+-Paladin 
+-Rogue
+-Barbarian
+-Goblin 
+-Timber Wolf
+-Dragon
