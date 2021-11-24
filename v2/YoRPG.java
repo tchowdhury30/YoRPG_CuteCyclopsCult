@@ -17,6 +17,7 @@ public class YoRPG {
 
   //each round, a Protagonist and a Monster will be instantiated...
 //  private Protagonist pat;
+  private Protagonist pat;
   private Monster smaug;     
 
   private int moveCount;
@@ -90,13 +91,13 @@ public class YoRPG {
 
     //instantiate the player's character
     if (protagClass == 1){
-        Paladin pat = new Paladin( name );
+        pat = new Paladin( name );
     }
     else if (protagClass == 2){
-        Barbarian pat = new Barbarian( name );
+        pat = new Barbarian( name );
     }
     else if (protagClass == 3){
-        Rogue pat = new Rogue( name );
+        pat = new Rogue( name );
     }
     else { // If the end user inputs any other number, it will get the default Protagonist
         pat = new Protagonist( name );
