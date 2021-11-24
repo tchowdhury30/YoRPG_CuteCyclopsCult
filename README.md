@@ -1,5 +1,4 @@
 # YoRPG_CuteCyclopsCult
-______________________________
 
 ## Team members:
 - Faiza Huda
@@ -9,15 +8,17 @@ ______________________________
 - Tape
 - Tasnim Chowdhury
 
+__________________________
+
 #### New Classes 
-- Protagonist: sets up Protagonist constructer with default hp, strength, and attack rate
-- Monster: sets up Monster constructer with default hp, strength, and attack rate
-- Paladin: sets the hp, strength, defense, attack rate, name of Paladin
-- Rogue: sets the hp, strength, defense, attack rate, name of Rogue
-- Barbarian: sets the hp, strength, defense, attack rate, name of Barbarian
-- Goblin: sets the hp, strength, defense, attack rate of Goblin (difficulty 1)
-- Timber Wolf: sets the hp, strength, defense, attack rate of Goblin (difficulty 2)
-- Dragon: sets the hp, strength, defense, attack rate of Goblin (difficulty 3)
+* Protagonists
+  - Paladin: As a trained knight, paladins have high strength and chivalry.
+  - Rogue: In order to make it big as a rogue, you have to possess street smarts and high stamina/health.
+  - Barbarian: Mysterious foreigners from another land that have great endurance/defense and can withstand even the heaviest of blows.
+* Monster
+  - Goblin: These commonplace pests may be slow, but are no joke with their high attack rates.
+  - Timber Wolf: With an almost impenetrable hide, these wolves have a high defense rating.
+  - Dragon: Flying serpents that have high health, attack, and damage.
 
 #### Versions 
 - v0: root/compileable files
