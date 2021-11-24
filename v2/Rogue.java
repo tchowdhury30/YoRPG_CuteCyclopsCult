@@ -10,5 +10,9 @@ public class Rogue extends Protagonist {
         defense = 16;
         atkRate = 0.6;
     }
-   
+
+    public Paladin( String nameInp) {
+        this(); 
+        name = nameInp;
+    }   
 }

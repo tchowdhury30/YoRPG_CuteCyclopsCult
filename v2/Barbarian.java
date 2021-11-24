@@ -10,4 +10,10 @@ public class Barbarian extends Protagonist {
         defense = 40;
         atkRate = 0.6;
     }
+
+    public Barbarian( String nameInp) {
+        this(); 
+        name = nameInp;
+    }
 }
+

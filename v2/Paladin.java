@@ -4,10 +4,15 @@ public class Paladin extends Protagonist {
         return description;
     }
     
-    public Paladin(){
+    public Paladin() {
         health = 100;
         strength = 50;
         defense = 16;
         atkRate = 0.6;
+    }
+
+    public Paladin ( String nameInp ) {
+        this(); 
+        name = nameInp;
     }
 }

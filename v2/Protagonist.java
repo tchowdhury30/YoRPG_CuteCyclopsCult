@@ -2,9 +2,8 @@ public class Protagonist extends Character {
   
   // char description: Protag can miss hits and has a lower defense, but the ability to make its strength double
   
-  private String name;
+  protected String name;
 
-/**  
   public Protagonist() {
     health = 100;
     strength = 40;
@@ -16,7 +15,6 @@ public class Protagonist extends Character {
     this(); 
     name = nameInp;
   }
-**/
   
   public void specialize() {
     strength = 80;
