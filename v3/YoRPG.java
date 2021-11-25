@@ -124,18 +124,22 @@ public class YoRPG {
 	    System.out.println( "\nNothing to see here. Move along!" );
     } else {
 	    String monsType;
+      String desc;
 	    Double spawner = Math.random();
 	    if (spawner <= (0.05 * difficulty)) {
 	        monsType = "Dragon";
+          desc = Dragon.about();
 	        smaug = new Dragon();
 	    } else if (spawner <= (0.25 * difficulty)) {
 	        monsType = "Timber Wolf";
 	        smaug = new TimberWolf();
+          desc = TimberWolf.about();
 	    } else {
 	        monsType = "Goblin";
 	        smaug = new Goblin();
+          desc = Goblin.about();
 	    }
-	    System.out.println("Lo, yonder " + monsType + " approacheth!");
+	    System.out.println("Lo, yonder " + monsType + " approacheth!\n" + desc);
 
 	    while( smaug.isAlive() && pat.isAlive() ) {
 
