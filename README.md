@@ -24,6 +24,7 @@ __________________________
 - v0: root/compileable files
 - v1: class Character implemented
 - v2: subclasses of Monster and Paladin implemented
+- v3: descriptions of each monster and protagonist displayed/attributes of protagonist subclasses adjusted
 
 #### Ways to grow game
 - leveling up protagonst to upgrade stats to fight at higher difficulties 
