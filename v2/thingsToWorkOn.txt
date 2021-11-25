@@ -1,3 +1,0 @@
-making new subclasses for protag (and probs mons) doesnt work bc of the init instance var that declared pat to be of type Paladin
-if you try to make amends (see v2/YoRPG.java), it wont work bc that is inside a method and aint an instance var so the other methods (ie playTurn) cant access it
-
