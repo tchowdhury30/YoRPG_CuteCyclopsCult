@@ -3,16 +3,16 @@ public class Rogue extends Protagonist {
         String description = "Rogues art sneaky bastards who art quick on their feet and haveth high stamina/health.";
         return description;
     }
-    
+
     public Rogue(){
         health = 175;
         strength = 40;
         defense = 16;
-        atkRate = 0.6;
+        atkRate = 0.9;
     }
 
     public Rogue( String nameInp) {
-        this(); 
+        this();
         name = nameInp;
-    }   
+    }
 }
