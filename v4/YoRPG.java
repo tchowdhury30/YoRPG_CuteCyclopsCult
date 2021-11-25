@@ -166,6 +166,9 @@ public class YoRPG {
 
         System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
                             " for " + d2 + " points of damage.");
+		    
+	System.out.println( "\n" + "Thou health is now: " + pat.health + " / 100");
+		    
 	    }//end while
 
 	    //option 1: you & the monster perish
