@@ -2,7 +2,7 @@
  * class YoRPG -- Driver file for Ye Olde Role Playing Game.
  * Simulates monster encounters of a wandering adventurer.
  * Required classes: Protagonist, Monster
- * 
+ *
  **********************************************/
 
 import java.io.*;
@@ -18,7 +18,7 @@ public class YoRPG {
   //each round, a Protagonist and a Monster will be instantiated...
 //  private Protagonist pat;
   private Protagonist pat;
-  private Monster smaug;     
+  private Monster smaug;
 
   private int moveCount;
   private boolean gameOver;
@@ -41,13 +41,13 @@ public class YoRPG {
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-  
+
   // ~~~~~~~~~~~~~~ METHODS ~~~~~~~~~~~~~~~~~~~
 
   /*=============================================
     void newGame() -- gathers info to begin a new game
-    pre:  
-    post: according to user input, modifies instance var for difficulty 
+    pre:
+    post: according to user input, modifies instance var for difficulty
     and instantiates a Protagonist
     =============================================*/
   public void newGame() {
@@ -66,7 +66,7 @@ public class YoRPG {
 	    difficulty = Integer.parseInt( in.readLine() );
     }
     catch ( IOException e ) { }
-    
+
     s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
     System.out.print( s );
 
@@ -74,14 +74,17 @@ public class YoRPG {
 	    name = in.readLine();
     }
     catch ( IOException e ) { }
-    
+
     s = "Well, " + name + ", do tell, what art thou? \n";
     s += "\t1: Paladin\n";
+    s += Paladin.about() + "\n";
     s += "\t2: Barbarian\n";
+    s += Barbarian.about() + "\n";
     s += "\t3: Rogue\n";
+    s += Rogue.about() + "\n";
     s += "Choose wisely: ";
     System.out.println( s );
-    
+
     try {
 	    protagClass = Integer.parseInt( in.readLine() );
     }
@@ -102,7 +105,7 @@ public class YoRPG {
     else { // If the end user inputs any other number, it will get the default Protagonist
         pat = new Protagonist( name );
     }
-    
+
 
   }//end newGame()
 
@@ -121,19 +124,23 @@ public class YoRPG {
 	    System.out.println( "\nNothing to see here. Move along!" );
     } else {
 	    String monsType;
+      String desc;
 	    Double spawner = Math.random();
 	    if (spawner <= (0.05 * difficulty)) {
 	        monsType = "Dragon";
+          desc = Dragon.about();
 	        smaug = new Dragon();
 	    } else if (spawner <= (0.25 * difficulty)) {
 	        monsType = "Timber Wolf";
 	        smaug = new TimberWolf();
+          desc = TimberWolf.about();
 	    } else {
 	        monsType = "Goblin";
-	        smaug = new Goblin(); 
+	        smaug = new Goblin();
+          desc = Goblin.about();
 	    }
-	    System.out.println("Lo, yonder " + monsType + " approacheth!");
-    
+	    System.out.println("Lo, yonder " + monsType + " approacheth!\n" + desc);
+
 	    while( smaug.isAlive() && pat.isAlive() ) {
 
         // Give user the option of using a special attack:
@@ -163,7 +170,7 @@ public class YoRPG {
 
 	    //option 1: you & the monster perish
 	    if ( !smaug.isAlive() && !pat.isAlive() ) {
-        System.out.println( "'Twas an epic battle, to be sure... " + 
+        System.out.println( "'Twas an epic battle, to be sure... " +
                             "You cut ye olde monster down, but " +
                             "with its dying breath ye olde monster. " +
                             "laid a fatal blow upon thy skull." );
@@ -187,10 +194,10 @@ public class YoRPG {
 
 
   public static void main( String[] args ) {
-    //As usual, move the begin-comment bar down as you progressively 
+    //As usual, move the begin-comment bar down as you progressively
     //test each new bit of functionality...
 
-    
+
     //loading...
     YoRPG game = new YoRPG();
     int encounters = 0;

@@ -4,11 +4,11 @@ public class Paladin extends Protagonist {
         health = 100;
         strength = 50;
         defense = 16;
-        atkRate = 0.6;
+        atkRate = 1.2;
     }
 
     public Paladin ( String nameInp ) {
-        this(); 
+        this();
         name = nameInp;
     }
 
@@ -16,5 +16,5 @@ public class Paladin extends Protagonist {
         String description = "Paladins art knights of Ye Grand Order. They dost deal high damage to monsters.";
         return description;
     }
-    
+
 }
