@@ -8,7 +8,7 @@ public class Rogue extends Protagonist {
         health = 175;
         strength = 40;
         defense = 16;
-        atkRate = 0.9;
+        atkRate = 1;
     }
 
     public Rogue( String nameInp) {
