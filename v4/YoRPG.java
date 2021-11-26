@@ -168,7 +168,8 @@ public class YoRPG {
                             " for " + d2 + " points of damage.");
 		    
 	System.out.println( "\n" + "Thou health is now: " + pat.health);
-		    
+	System.out.println( "And Ye Olde Monter's: " + smaug.health);
+	    
 	    }//end while
 
 	    //option 1: you & the monster perish

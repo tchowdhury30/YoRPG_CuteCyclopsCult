@@ -18,7 +18,7 @@ public class Character{
 	
 	public int attack (Character c){
 	    int dmg = (int)((strength * atkRate) - c.defense);
-	    if (dmg < 0){
+	    if (dmg < 0){ 
 	        dmg = 0;
 	    }
 	    c.lowerHP(dmg);
