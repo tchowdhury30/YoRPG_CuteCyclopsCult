@@ -18,8 +18,12 @@ public class Character{
 	
 	public int attack (Character c){
 	    int dmg = (int)((strength * atkRate) - c.defense);
-	    if (dmg < 0 || Math.random() > atkRate){ //The character can miss landing a hit, depending on their atkRate
+	    if (Math.random() > atkRate){ //The character can miss landing a hit, depending on their atkRate
 	        dmg = 0;
+		System.out.println("The beast hath dodged thy attack.");
+	    }
+	    if (dmg < 0){
+		dmg = 0;
 	    }
 	    c.lowerHP(dmg);
 	    return dmg;

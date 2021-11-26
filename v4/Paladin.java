@@ -2,9 +2,9 @@ public class Paladin extends Protagonist {
 
     public Paladin() {
         health = 100;
-        strength = 50;
+        strength = 60;
         defense = 16;
-        atkRate = 1.2;
+        atkRate = 0.7;
     }
 
     public Paladin ( String nameInp ) {
