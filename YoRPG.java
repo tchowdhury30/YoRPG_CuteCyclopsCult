@@ -16,14 +16,13 @@ public class YoRPG {
   public final static int MAX_ENCOUNTERS = 5;
 
   //each round, a Protagonist and a Monster will be instantiated...
-//  private Protagonist pat;
   private Protagonist pat;
   private Monster smaug;
 
   private int moveCount;
   private boolean gameOver;
   private int difficulty;
-  private int protagClass;
+  private String protagClass;
 
   private InputStreamReader isr;
   private BufferedReader in;
@@ -67,44 +66,58 @@ public class YoRPG {
     }
     catch ( IOException e ) { }
 
-    s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
+    s = "\n Intrepid protagonist, what doth thy call thyself? (State your name): ";
     System.out.print( s );
 
-    try {
-	    name = in.readLine();
+    while(true){
+    	try {
+	    	name = in.readLine();
+		if (name.length() != 0){
+			break;
+		}
+		System.out.println("Art thou deaf? What ist thy name? \n");
+    	} catch ( IOException e ) {}
     }
-    catch ( IOException e ) { }
 
-    s = "Well, " + name + ", do tell, what art thou? \n";
-    s += "\t1: Paladin\n";
-    s += Paladin.about() + "\n";
-    s += "\t2: Barbarian\n";
-    s += Barbarian.about() + "\n";
-    s += "\t3: Rogue\n";
-    s += Rogue.about() + "\n";
+    s = "\n Well, " + name + ", do tell, what art thou? \n";
+    s += "\t1: Paladin \n";
+    s += "\t2: Barbarian \n";
+    s += "\t3: Rogue \n";
+    s += "\t4: I beg thee pardon? [info on each class] \n";
     s += "Choose wisely: ";
     System.out.println( s );
 
-    try {
-	    protagClass = Integer.parseInt( in.readLine() );
-    }
-    catch ( IOException e ) {
+    while(true){
+	    try {
+		    protagClass = in.readLine();
+    		//instantiate the player's character
+    		if (protagClass.equals("1")){
+        		pat = new Paladin( name );
+			break;
+    		}
+    		else if (protagClass.equals("2")){
+        		pat = new Barbarian( name );
+			break;
+    		}
+    		else if (protagClass.equals("3")){
+        		pat = new Rogue( name );
+			break;
+    		}
+		else if (protagClass.equals("4")){
+			System.out.println( "\n" + Paladin.about() + "\n"
+					+ Rogue.about() + "\n"
+					+ Barbarian.about() + "\n");
+			System.out.println("Thy chooseth: ");
+		}
+    		else { // If the end user inputs anything else, it will get the peasant class
+			System.out.println("\nYou egg! Fine, thou shalt be the peasant thou hast always been!\n");
+        		pat = new Protagonist( "Peasant" ); //Name will automatically be changed to Peasant
+			break;
+    		}
+    	    }
+            catch ( IOException e ) {}
     }
 
-
-    //instantiate the player's character
-    if (protagClass == 1){
-        pat = new Paladin( name );
-    }
-    else if (protagClass == 2){
-        pat = new Barbarian( name );
-    }
-    else if (protagClass == 3){
-        pat = new Rogue( name );
-    }
-    else { // If the end user inputs any other number, it will get the default Protagonist
-        pat = new Protagonist( name );
-    }
 
 
   }//end newGame()
@@ -166,6 +179,10 @@ public class YoRPG {
 
         System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
                             " for " + d2 + " points of damage.");
+		    
+	System.out.println( "\n" + "Thou health is now: " + pat.health);
+	System.out.println( "And Ye Olde Monter's: " + smaug.health);
+	    
 	    }//end while
 
 	    //option 1: you & the monster perish
