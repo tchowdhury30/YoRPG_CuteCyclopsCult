@@ -1,9 +1,16 @@
+2021-11-25
+
+QCC
+- Why buffered reader over Scanner class? What is the difference? When is one used over the other?
+
+
 2021-11-23
 
 DISCOS
 -Protected instance variables can be inherited from a superclass to its subclass. 
 QCC
 -We have run into problems trying to make subclasses of the Protagonist class. (see v2) 
+
 
 2021-11-22
 
