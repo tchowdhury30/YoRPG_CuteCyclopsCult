@@ -27,6 +27,7 @@ __________________________
 - v2: subclasses of Monster and Paladin implemented
 - v3: descriptions of each monster and protagonist displayed/attributes of protagonist subclasses adjusted
 - v4: added health status, hidden protag class, and other dialogues
+- v5 (in progress): trying to implement shop that can change attributes of protagonist
 
 #### Ways to grow game
 - leveling up protagonst to upgrade stats to fight at higher difficulties 
