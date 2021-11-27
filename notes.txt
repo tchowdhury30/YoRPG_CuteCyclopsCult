@@ -1,3 +1,10 @@
+2021-11-26
+DISCO
+- Used break to leave loops
+
+QCC
+- Why do we need to input three times for java to do anything? :(
+
 2021-11-25
 
 QCC
@@ -21,3 +28,4 @@ DISCOS
 QCC
  - Do we need to set specific values for the attributes for both Monster and Protag or should it be random?
  - How should the stats of the protag compare to the monsters? Should they be balanced and how?
+ 
